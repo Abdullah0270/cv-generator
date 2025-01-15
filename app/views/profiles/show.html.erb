@@ -1,0 +1,399 @@
+<nav class="flex justify-between items-center mx-3 sm:mx-10 py-6">
+  <div class="nav-brand">
+    <h2 class="font-extrabold text-2xl"><a href="https://gleaming-dieffenbachia-6bc826.netlify.app/">logoipsom</a></h2>
+  </div>
+  <div id="navlinks" class="absolute md:static bg-[#F5FCFF] md:bg-transparent w-full left-0 top-[6%] md:mx-auto md:w-auto" style="top: -80%;">
+    <ul class="flex flex-col md:flex-row gap-6 text-base md:text-xl mx-3 sm:mx-10 md:mx-0 py-7 md:py-0">
+      <li><a class="hover:text-[#5E3BEE]" href="#">Home</a></li>
+      <li><a class="hover:text-[#5E3BEE]" href="#">Portfolio</a></li>
+      <li><a class="hover:text-[#5E3BEE]" href="#">About me</a></li>
+      <li><a class="hover:text-[#5E3BEE]" href="#">Testimonials</a></li>
+      <li>
+        <button class="md:hidden border border-[#5E3BEE] text-[#5E3BEE] rounded py-1 px-2 leading-7 ">
+          Contact Me
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <button class="hidden md:flex border border-[#5E3BEE] text-[#5E3BEE] rounded p-3 hover:bg-[#5f3bee] hover:text-white transition-all duration-500 ease-in-out">
+      Contact Me
+    </button>
+  </div>
+  <div class="md:hidden text-4xl" id="menu">
+    <ion-icon name="menu-outline" role="img" class="md hydrated"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path stroke-linecap="round" stroke-miterlimit="10" d="M80 160h352M80 256h352M80 352h352" class="ionicon-fill-none ionicon-stroke-width"></path></svg></div></template></ion-icon>
+  </div>
+</nav>
+
+<!-- main section -->
+<section class="bg-[#F5FCFF]">
+  <div class="flex flex-wrap items-center mx-3 sm:mx-10 py-10">
+    <div class="2xl:max-w-700px md:w-1/2 w-full leading-10 px-2">
+      <p class="font-bold py-3 text-base lg:text-xl">Hey, I am <%= params[:name] %></p>
+      <h2 class="font-bold text-[38px] xl:text-5xl 2xl:text-7xl">
+        <%= params[:summary] %></span>
+      </h2>
+      <p class="max-w-[600px] text-base lg:text-xl xl:text-2xl py-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <button class="bg-[#5E3BEE] text-white py-3 px-4 my-5 rounded text-base lg:text-xl hover:cursor-pointer hover:bg-[#5f3beeda]">
+        Get in Touch
+      </button>
+    </div>
+
+    <div class="md:w-1/2 w-full">
+      <img class="ms-auto" src="/assets/Group 11 1.png">
+    </div>
+  </div>
+</section>
+
+<!-- section expertise -->
+<section class="expertise mx-3 sm:mx-10 mt-7">
+  <h1 class="font-bold text-6xl">My Expertise</h1>
+  <div class="flex flex-wrap justify-center sm:justify-start my-10">
+    <div class="w-full sm:w-6/12 xl:w-3/12">
+      <div class="bg-[#F5FCFF] p-6 rounded-xl hover:border-b-4 border-[#5E3BEE] mr-2 mb-2 xl:min-h-[400px] 2xl:h-auto">
+        <div><img src="/assets/Strategy &amp; Direction.png"></div>
+        <div>
+          <h3 class="font-bold pt-3 pb-4 text-xl sm:text-22px md:text-[26px] xl:text-3xl">
+            Skills
+          </h3>
+          <p class="text-base md:text-xl">
+            <%= params[:expertise] %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full sm:w-6/12 xl:w-3/12">
+      <div class="bg-[#F5FCFF] p-6 rounded-xl hover:border-b-4 border-[#5E3BEE] mr-2 mb-2 xl:min-h-[400px] 2xl:h-auto">
+        <div><img src="/assets/Branding &amp; Logo.png" alt=""></div>
+        <div>
+          <h3 class="font-bold pt-3 pb-4 text-xl sm:text-22px md:text-[26px] xl:text-3xl">
+            Branding &amp; Logo
+          </h3>
+          <p class="text-base md:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse varius enim in eros elementum tristique.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full sm:w-6/12 xl:w-3/12">
+      <div class="bg-[#F5FCFF] p-6 rounded-xl hover:border-b-4 border-[#5E3BEE] mr-2 mb-2 xl:min-h-[400px] 2xl:h-auto">
+        <div><img src="/assets/UI &amp; UX Design.png" alt=""></div>
+        <div>
+          <h3 class="font-bold pt-3 pb-4 text-xl sm:text-22px md:text-[26px] xl:text-3xl">
+            UI &amp; UX Design
+          </h3>
+          <p class="text-base md:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse varius enim in eros elementum tristique.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full sm:w-6/12 xl:w-3/12">
+      <div class="bg-[#F5FCFF] p-6 rounded-xl hover:border-b-4 border-[#5E3BEE] mr-2 mb-2 xl:min-h-[400px] 2xl:h-auto">
+        <div><img src="/assets/Webflow Development.png" alt=""></div>
+        <div>
+          <h3 class="font-bold pt-3 pb-4 text-xl sm:text-22px md:text-[26px] xl:text-3xl">
+            Webflow Development
+          </h3>
+          <p class="text-base md:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse varius enim in eros elementum tristique.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Me -->
+<section class="my-20 mx-3 sm:mx-10">
+  <div class="flex flex-wrap items-center">
+    <div class="lg:w-1/2 w-full order-1 lg:order-none lg:px-10 px-3">
+      <img class="max-h-[700px] mx-auto my-6 lg:my-0" src="/assets/About Me.png" alt="">
+    </div>
+    <div class="lg:w-1/2 w-full">
+      <p class="font-bold py-3 text-xl">About</p>
+      <h1 class="font-bold text-6xl">About Me</h1>
+      <p class="text-base lg:text-xl xl:text-2xl mt-5 pe-10">
+        <%= params[:about] %>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- section Portfolio -->
+
+<section class="my-20 mx-3 sm:mx-10">
+  <div class="flex flex-wrap items-center justify-between">
+    <div class="mb-10">
+      <p class="font-bold py-3 text-xl">Recent Projects</p>
+      <h1 class="font-bold text-6xl">My Portfolio</h1>
+    </div>
+
+    <div>
+      <button class="text-white bg-[#E62872] py-3 px-4 rounded-md flex items-center hover:bg-[#e62871c4]">
+        <img src="/assets/Vector.png" alt="">
+        <span class="ms-2 text-white"> Visit My Dribbble </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap mt-10">
+    <div class="md:w-1/3 w-full">
+      <div class="me-2 mb-5 shadow-xl rounded-md">
+        <div>
+          <img src="/assets/Image.png" alt="">
+        </div>
+        <div class="ms-5 pt-4 pb-6">
+          <h2 class="text-2xl lg:text-3xl font-bold pt-5 pb-4">Ahuse</h2>
+          <p class="text-base lg:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse varius enim in eros.
+          </p>
+          <a class="border-b-2 border-[#5E3BEE] flex pt-4 font-semibold text-base lg:text-xl max-w-[150px] lg:max-w-[190px]" href="#">View In Dribbble
+            <span class="ms-2"><img class="text-[#006B6A]" src="/assets/Vector (1).png" alt=""></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-1/3 w-full">
+      <div class="me-2 mb-5 shadow-xl rounded-md">
+        <div>
+          <img src="/assets/Image2.png" alt="">
+        </div>
+        <div class="ms-5 pt-4 pb-6">
+          <h2 class="text-2xl lg:text-3xl font-bold pt-5 pb-4">
+            App Dashboard
+          </h2>
+          <p class="text-base lg:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse varius enim in eros.
+          </p>
+          <a class="border-b-2 border-[#5E3BEE] flex pt-4 font-semibold text-base lg:text-xl max-w-[150px] lg:max-w-[190px]" href="#">View In Dribbble
+            <span class="ms-2"><img class="text-[#006B6A]" src="/assets/Vector (1).png" alt=""></span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:w-1/3 w-full">
+      <div class="me-2 mb-5 shadow-xl rounded-md">
+        <div>
+          <img src="/assets/Image3.png" alt="">
+        </div>
+        <div class="ms-5 pt-4 pb-6">
+          <h2 class="text-2xl lg:text-3xl font-bold pt-5 pb-4">
+            Easy Rent
+          </h2>
+          <p class="text-base lg:text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Suspendisse varius enim in eros.
+          </p>
+          <a class="border-b-2 border-[#5E3BEE] flex pt-4 font-semibold text-base lg:text-xl max-w-[150px] lg:max-w-[190px]" href="#">View In Dribbble
+            <span class="ms-2"><img class="text-[#006B6A]" src="/assets/Vector (1).png" alt=""></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section feedback -->
+<section class="bg-[#F5FCFF] py-16">
+  <div class="my-20 mx-3 sm:mx-10">
+    <p class="font-bold py-3 text-xl">Clients Feedback</p>
+    <h1 class="font-bold text-6xl">Customer testimonials</h1>
+    <div class="my-16 flex flex-wrap ">
+      <div class="md:w-1/3 w-full">
+        <div class="me-2 mb-5 border-2 border-[#006B6A] rounded-xl lg:p-6 p-4 ">
+          <div class="star flex gap-1">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+          </div>
+          <div>
+            <p class="text-base lg:text-xl py-8">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra.
+            </p>
+          </div>
+          <div class="flex items-center gap-5">
+            <img class="max-h-[50px]" src="/assets/Avatar Image.png" alt="">
+            <div>
+              <p class="text-base lg:text-xl font-semibold">Dianne Russell</p>
+              <p class="text-base lg:text-xl">Starbucks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/3 w-full">
+        <div class="me-2 mb-5 border-2 border-[#006B6A] rounded-xl lg:p-6 p-4 ">
+
+          <div class="star flex gap-1">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+          </div>
+          <div>
+            <p class="text-base lg:text-xl py-8">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra.
+            </p>
+          </div>
+          <div class="flex items-center gap-5">
+            <img class="max-h-[50px]" src="/assets/Avatar Image (1).png" alt="">
+            <div>
+              <p class="text-base lg:text-xl font-semibold">Kristin Watson</p>
+              <p class="text-base lg:text-xl">Louis Vuitton</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:w-1/3 w-full">
+        <div class="me-2 mb-5 border-2 border-[#006B6A] rounded-xl lg:p-6 p-4 ">
+
+          <div class="star flex gap-1">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+            <img src="/assets/Vector (2).png" alt="">
+          </div>
+          <div>
+            <p class="text-base lg:text-xl py-8">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra.
+            </p>
+          </div>
+          <div class="flex items-center gap-5">
+            <img class="max-h-[50px]" src="/assets/Avatar Image (2).png" alt="">
+            <div>
+              <p class="text-base lg:text-xl font-semibold">Kathryn Murphy</p>
+              <p class="text-base lg:text-xl">McDonald's</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- contact Us -->
+
+<section class="my-20 mx-3 sm:mx-10">
+  <div class="text-center">
+    <p class="text-xl font-bold">Get in Touch</p>
+    <h1 class="font-bold text-6xl pt-2 pb-5">Contact Me</h1>
+    <p class="text-2xl">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+  </div>
+
+  <div class="max-w-[1024px] mt-7 md:mx-auto">
+    <div class="flex flex-wrap md:flex-nowrap gap-5 py-3 justify-center items-center">
+      <div class="md:w-1/2 w-full">
+        <label class="block text-xl pb-2" for="">First Name</label>
+        <input type="text" class="border border-[#5E3BEE] rounded-lg w-full py-3 ps-2">
+      </div>
+      <div class="md:w-1/2 w-full">
+        <label class="block text-xl pb-2" for="">Last Name</label>
+        <input type="text" class="border border-[#5E3BEE] rounded-lg w-full py-3 ps-2">
+      </div>
+    </div>
+
+    <div class="flex flex-wrap md:flex-nowrap gap-5 py-3 justify-center items-center">
+      <div class="md:w-1/2 w-full">
+        <label class="block text-xl pb-2" for="">Email</label>
+        <input type="text" class="border border-[#5E3BEE] rounded-lg w-full py-3 ps-2">
+      </div>
+      <div class="md:w-1/2 w-full">
+        <label class="block text-xl pb-2" for="">Phone number</label>
+        <input type="tel" class="border border-[#5E3BEE] rounded-lg w-full py-3 ps-2">
+      </div>
+    </div>
+
+    <div class="py-3">
+      <label class="block text-xl pb-2" for="">Choose a topic</label>
+
+      <select name="topic" id="" class="border form-select border-[#5E3BEE] rounded-lg w-full py-3 pl-2 bg-transparent">
+        <option value="" disabled="" selected="" class="mp-5">
+          Select One ...
+        </option>
+
+        <option value="option1">option1</option>
+        <option value="option2">option2</option>
+        <option value="option3">option3</option>
+      </select>
+    </div>
+
+    <div class="py-3">
+      <label class="block text-xl pb-2" for="">Message</label>
+      <textarea class="border border-[#5E3BEE] w-full rounded-lg ps-2 pt-3" rows="7" placeholder="Type your message...." name="" id=""></textarea>
+    </div>
+    <div class="py-3">
+      <input type="checkbox"> <label for="">I accept the terms</label>
+    </div>
+    <div class="flex justify-center py-3">
+      <button class="bg-[#5E3BEE] text-white py-4 px-5 rounded-lg hover:cursor-pointer hover:bg-[#5f3beec5]">
+        Submit
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- section footer -->
+<section class="bg-[#F5FCFF]">
+  <footer class="sm mx-3:sm:mx-10 mx-2">
+    <div class="sm:flex hidden flex-wrap justify-between items-center border-b-2 border-[#2829388C] py-8 md:py-10 lg:py-16">
+      <div class="ft-brand">
+        <h2 class="font-extrabold text-2xl">logoipsom</h2>
+      </div>
+      <div class="navlinks">
+        <ul class="flex  gap-4 md:gap-6 text-sm md:text-base lg:text-xl">
+          <li><a class="hover:text-[#5E3BEE]" href="#">Home</a></li>
+          <li><a class="hover:text-[#5E3BEE]" href="#">Portfolio</a></li>
+          <li><a class="hover:text-[#5E3BEE]" href="#">About me</a></li>
+          <li><a class="hover:text-[#5E3BEE]" href="#">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-2">
+        <ion-icon class="text-2xl md hydrated" name="logo-facebook" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd"></path></svg></div></template></ion-icon>
+        <ion-icon class="text-2xl md hydrated" name="logo-instagram" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"></path><path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"></path></svg></div></template></ion-icon>
+        <ion-icon class="text-2xl md hydrated" name="logo-twitter" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z"></path></svg></div></template></ion-icon>
+        <ion-icon class="text-2xl md hydrated" name="logo-linkedin" role="img"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon" viewBox="0 0 512 512"><path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"></path></svg></div></template></ion-icon>
+      </div>
+    </div>
+    <div class="py-8 flex flex-wrap sm:justify-between   ">
+      <div class="py-3 sm:py-0 text-sm md:text-base w-full sm:w-auto ">
+        <p class="text-center">Made with 💖 by ABDULLAH</p>
+      </div>
+      <div class="navlinks w-full sm:w-auto">
+        <ul class="flex gap-4 justify-center  md:gap-6 text-sm md:text-base py-3 sm:py-0">
+          <li>
+            <a class="hover:text-[#5E3BEE]" href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a class="hover:text-[#5E3BEE]" href="#">Terms of Service</a>
+          </li>
+          <li>
+            <a class="hover:text-[#5E3BEE]" href="#">Cookies Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</section>
+
+

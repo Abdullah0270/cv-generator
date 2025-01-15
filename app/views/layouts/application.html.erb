@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Cv Generator" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/saved-resource.js"></script>
+    <link href="/assets/chronicle-display.css" rel="stylesheet">
+    <link href="/assets/css2.css" rel="stylesheet">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <%= yield :head %>
+
+  </head>
+
+  <body class="font-[roboto]">
+          <%= yield %>
+
+
+
+      <script>
+          const navlink = document.getElementById("navlinks");
+          const menu = document.getElementById("menu");
+          navlink.style.top = "-80%";
+
+          menu.addEventListener("click", () => {
+              if (navlink.style.top === "-80%") {
+                  navlink.style.top = "9%";
+              } else {
+                  navlink.style.top = "-80%";
+              }
+          });
+      </script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </main>
+  </body>
+</html>

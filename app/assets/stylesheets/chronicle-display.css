@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Chronicle Display';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Chronicle Display'), url('https://fonts.cdnfonts.com/s/38407/Chronicle Display Light Italic.woff') format('woff');
+}
+@font-face {
+    font-family: 'Chronicle Display';
+    font-style: normal;
+    font-weight: 325;
+    src: local('Chronicle Display'), url('https://fonts.cdnfonts.com/s/38407/Chronicle Display Roman.woff') format('woff');
+}
+@font-face {
+    font-family: 'Chronicle Display';
+    font-style: normal;
+    font-weight: 375;
+    src: local('Chronicle Display'), url('https://fonts.cdnfonts.com/s/38407/Chronicle Display Semibold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Chronicle Display';
+    font-style: normal;
+    font-weight: 450;
+    src: local('Chronicle Display'), url('https://fonts.cdnfonts.com/s/38407/Chronicle Display Black.woff') format('woff');
+}
+
+
