@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'profiles#new' # Form page
-  get 'profile', to: 'profiles#show', as: 'profile' # Profile page
+  root 'profiles#new'  # Form page
+
+  resources :profiles, only: [:new, :create, :show]
 end

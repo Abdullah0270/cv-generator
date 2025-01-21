@@ -13,12 +13,104 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <%= yield :head %>
+    <style>
+        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 
+        .animated-input:hover {
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.05);
+            border-color: #6366f1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-upload-animation {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 15px 5px rgba(99, 102, 241, 0);
+            }
+        }
+
+        .drop-zone-highlight {
+            transition: background-color 0.3s, transform 0.3s;
+            background-color: #dbf4ff;
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: #6b46c1;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .logo {
+            animation: logo-float 3s infinite ease-in-out;
+        }
+
+        @keyframes logo-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .floating-item {
+            position: absolute;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .item1 {
+            top: 20%;
+            left: 1%;
+            animation-delay: 0s;
+        }
+
+        .item2 {
+            top: 30%;
+            right:1%;
+            animation-delay: 1s;
+        }
+
+        .item3 {
+            bottom: 25%;
+            left: 1%;
+            animation-delay: 2s;
+        }
+    </style>
   </head>
 
   <body class="font-[roboto]">
@@ -27,6 +119,50 @@
 
 
       <script>
+          document.addEventListener('DOMContentLoaded', () => {
+              const sections = document.querySelectorAll('.transform');
+              sections.forEach(section => {
+                  section.classList.add('opacity-0', 'translate-y-10');
+                  setTimeout(() => {
+                      section.classList.add('opacity-100', 'translate-y-0');
+                      section.classList.remove('opacity-0', 'translate-y-10');
+                  }, 300);
+              });
+
+              const fileUpload = document.getElementById('file-upload');
+              const filePreview = document.getElementById('file-preview');
+              const fileName = document.getElementById('file-name');
+
+              fileUpload.addEventListener('change', (event) => {
+                  const file = event.target.files[0];
+                  if (file) {
+                      filePreview.classList.remove('hidden');
+                      fileName.textContent = `${file.name} (${file.type || 'Unknown type'})`;
+                  }
+              });
+
+              const dropZone = document.getElementById('drop-zone');
+
+              dropZone.addEventListener('dragover', (event) => {
+                  event.preventDefault();
+                  dropZone.classList.add('bg-blue-100');
+              });
+
+              dropZone.addEventListener('dragleave', () => {
+                  dropZone.classList.remove('bg-blue-100');
+              });
+
+              dropZone.addEventListener('drop', (event) => {
+                  event.preventDefault();
+                  dropZone.classList.remove('bg-blue-100');
+                  const file = event.dataTransfer.files[0];
+                  if (file) {
+                      fileUpload.files = event.dataTransfer.files;
+                      filePreview.classList.remove('hidden');
+                      fileName.textContent = `${file.name} (${file.type || 'Unknown type'})`;
+                  }
+              });
+          });
           const navlink = document.getElementById("navlinks");
           const menu = document.getElementById("menu");
           navlink.style.top = "-80%";
@@ -39,6 +175,62 @@
               }
           });
       </script>
+          <script>
+              document.getElementById("add-field").addEventListener("click", () => {
+                  const dynamicFields = document.getElementById("dynamic-fields");
+
+                  // Create a wrapper for the input field and delete button
+                  const fieldWrapper = document.createElement("div");
+                  fieldWrapper.className = "relative";
+
+                  // Create a new input field
+                  const newField = document.createElement("input");
+                  newField.type = "text";
+                  newField.placeholder = "References, Work Experience, Projects, Languages, Achievements";
+                  newField.className =
+                      "block w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-green-500";
+
+                  // Add an event listener to update the hidden field when the input changes
+                  newField.addEventListener("input", updateDynamicDataField);
+
+                  // Add a delete button
+                  const deleteButton = document.createElement("button");
+                  deleteButton.type = "button";
+                  deleteButton.textContent = "✖";
+                  deleteButton.classList.add(
+                      "absolute",
+                      "right-3",
+                      "top-3",
+                      "text-red-500",
+                      "hover:text-red-700",
+                      "font-bold"
+                  );
+
+                  // Add an event listener to remove the field wrapper on delete button click
+                  deleteButton.addEventListener("click", () => {
+                      fieldWrapper.remove();
+                      updateDynamicDataField(); // Update the hidden field value after deleting
+                  });
+
+                  // Append the input field and delete button to the wrapper
+                  fieldWrapper.appendChild(newField);
+                  fieldWrapper.appendChild(deleteButton);
+
+                  // Append the wrapper to the dynamic fields container
+                  dynamicFields.appendChild(fieldWrapper);
+
+                  // Update the hidden field value after adding a new input
+                  updateDynamicDataField();
+              });
+
+              function updateDynamicDataField() {
+                  const dynamicFields = document.getElementById("dynamic-fields");
+                  const inputs = dynamicFields.querySelectorAll("input");
+                  const values = Array.from(inputs).map((input) => input.value);
+                  document.getElementById("dynamic-data-field").value = values.join(", ");
+              }
+
+          </script>
       <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </main>
